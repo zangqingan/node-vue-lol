@@ -6,6 +6,9 @@ const app = express()
 app.use(require('cors')())
 app.use(express.json())
 
+//上传图片静态资源托管
+app.use('/uploads',express.static(__dirname + '/uploads'))
+
 
 // 引用通用admin端的curd路由,并把app对象传入
 require('./router/admin/index')(app)
